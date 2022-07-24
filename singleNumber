@@ -1,0 +1,11 @@
+class Solution {
+    public int singleNumber(int[] nums) {
+      int x = 0;
+	for (int a : nums) {
+        System.out.println(a);
+		x = x ^ a;
+        System.out.println(x);
+	}
+	return x;
+    }
+}
