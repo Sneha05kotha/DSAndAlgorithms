@@ -1,0 +1,19 @@
+class Solution {
+    public boolean isValidSudoku(char[][] board) {
+        
+        HashSet<String> sh = new HashSet();
+        
+        for (int k =0;k<9;k++){
+         for(int i=0;i<9;i++){
+            char c  =  board[k][i];
+            if( c!='.'){
+                if(!sh.add(c+ " at "+k) ||!sh.add(c+ " at col "+i)|| !sh.add(c+ " at "+i/3+" and " +k/3)){
+                    return false;
+                }
+            }
+         }
+        }
+        return true;   
+        
+    }
+}
