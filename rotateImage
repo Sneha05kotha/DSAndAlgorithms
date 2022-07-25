@@ -1,0 +1,26 @@
+class Solution {
+    public void rotate(int[][] matrix) {
+        int i =0;
+        //inverting
+        while(i< matrix.length/2){
+            swap(matrix[matrix.length-1-i], matrix[i]);
+            i++;
+        }
+        //flipping lower triange with upper
+       for(int k1=0;k1<matrix.length;k1++){
+            for(int j1=0;j1<k1;j1++){
+                if(j1<k1){
+                   int t= matrix[k1][j1];
+                    matrix[k1][j1] = matrix[j1][k1];
+                    matrix[j1][k1] = t;
+                }}}
+        
+    }
+    public void swap(int[] m,int[] n){
+        for(int i=0;i<m.length;i++){
+        int temp = m[i];
+            m[i]=n[i];
+            n[i]= temp;
+        }
+    }
+}
